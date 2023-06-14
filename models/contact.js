@@ -10,10 +10,6 @@ const contactSchema = new Schema(
       type: String,
       required: [true, "Set name for contact"],
     },
-    email: {
-      type: String,
-      required: [true, "Set email for contact"],
-    },
     phone: {
       type: String,
       required: [true, "Set phone for contact"],
@@ -36,7 +32,6 @@ const Contact = model("contact", contactSchema);
 
 const newContactSchema = Joi.object({
   name: Joi.string().min(3).max(30).required(),
-  email: Joi.string().required(),
   phone: Joi.string().required(),
   favorite: Joi.bool(),
 });
